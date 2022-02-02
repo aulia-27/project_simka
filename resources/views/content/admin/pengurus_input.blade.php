@@ -40,7 +40,7 @@
 
                     <div class="form-group mt-1">
                         <label for="notelp" class="mt-1">No Telepon</label>
-                        <input type="number" name="notelp" class="form-control" placeholder="Masukan Text">
+                        <input type="text" name="notelp" class="form-control" placeholder="Masukan Text">
                     </div>
 
                     <div class="form-group mt-1">
