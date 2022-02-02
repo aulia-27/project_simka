@@ -12,17 +12,16 @@
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
-                Tabel Pengurus Masjid
+                Tabel Data Pengurus Masjid
             </div>
             <div class="card-body">
-                <a href="{{ url('input_pengurus') }}">
-                    <button type="submit" class="btn btn-primary">Input Data Pengurus Masjid</button>
-                </a>
+                <a href="{{ url('pengurus_input') }}" class="btn btn-primary">+ Tambah Data Pengurus</a>
             </div>
             <div class="card-body">
                 <table id="datatablesSimple">
                     <thead>
                         <tr>
+                            <th>NO</th>
                             <th>Nama</th>
                             <th>Tanggal Lahir</th>
                             <th>Jenis Kelamin</th>
@@ -35,6 +34,7 @@
                     </thead>
                     <tfoot>
                         <tr>
+                            <th>NO</th>
                             <th>Nama</th>
                             <th>Tanggal Lahir</th>
                             <th>Jenis Kelamin</th>
@@ -46,16 +46,21 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                        @foreach ($datas as $key=>$values)
+                        @foreach ($data as $dataRemajaMasjid)
                             <tr>
-                                <td>{{ $values->nama }}</td>
-                                <td>{{ $values->tgllahir }}</td>
-                                <td>{{ $values->jekel }}</td>
-                                <td>{{ $values->asal }}</td>
-                                <td>{{ $values->alamat }}</td>
-                                <td>{{ $values->notelp }}</td>
-                                <td>{{ $values->email }}</td>
-                                <td>{{ $values->jabatan }}</td>
+                                <td>{{ $dataRemajaMasjid->id }}</td>
+                                <td>{{ $dataRemajaMasjid->nama }}</td>
+                                <td>{{ $dataRemajaMasjid->tgllahir }}</td>
+                                <td>{{ $dataRemajaMasjid->jekel }}</td>
+                                <td>{{ $dataRemajaMasjid->asal }}</td>
+                                <td>{{ $dataRemajaMasjid->alamat }}</td>
+                                <td>{{ $dataRemajaMasjid->notelp }}</td>
+                                <td>{{ $dataRemajaMasjid->email }}</td>
+                                <td>{{ $dataRemajaMasjid->jabatan }}</td>
+                                <td>
+                                    <a href="{{ url('/pengurus_edit/'.$dataRemajaMasjid->id) }}" class="btn btn-warning">edit</a>
+                                    <a href="{{ url('/destroy/'.$dataRemajaMasjid->id) }}" class="btn btn-danger">delete</a>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

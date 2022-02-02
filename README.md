@@ -1,2 +1,2 @@
-# project_simka
+# simka_project
  
