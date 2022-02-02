@@ -20,7 +20,7 @@
 
                     <div class="form-group mt-1">
                         <label for="nama"  class="mt-1">Tanggal Ceramah</label>
-                        <input type="text" name="tgl_ceramah" class="form-control">
+                        <input type="text" name="tgl_ceramah" class="form-control" placeholder="tahun(1900)-bulan(01)-hari(01)">
                     </div>
 
                     <div class="form-group mt-1">
@@ -34,8 +34,8 @@
                     </div>
 
                     <div class="form-group mt-1">
-                        <label for="nama"  class="mt-1">Deskripsi</label>
-                        <textarea name="deskripsi" class="form-control" placeholder="Masukan Text"></textarea>
+                        <label for="nama"  class="mt-1" >Deskripsi</label>
+                        <textarea name="deskripsi" class="form-control" style="height: 150px" placeholder="Masukan Text"></textarea>
                     </div>
                     
                     <div class="form-group mt-3">

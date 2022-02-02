@@ -11,7 +11,7 @@
         </ol>
         <div class="card mb-4">
             <div class="card-body">
-                <form action="{{ url('/update/' . $data->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ url('/pengurus_update/' . $data->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group mt-1">
                         <label for="nama"  class="mt-1">Nama</label>
@@ -19,13 +19,16 @@
                     </div>
 
                     <div class="form-group mt-1">
-                        <label for="nama"  class="mt-1">Tanggal Lahir</label>
-                        <input type="text" name="tgllahir" class="form-control" value="{{ $data->tgllahir }}">
+                        <label for="tgllahir"  class="mt-1">Tanggal Lahir</label>
+                        <input type="text" name="tgllahir" class="form-control" placeholder="tahun(1900)-bulan(01)-hari(01)" value="{{ $data->tgllahir }}"">
                     </div>
 
                     <div class="form-group mt-1">
-                        <label for="nama" class="mt-1">Jenis Kelamin</label>
-                        <input type="text" name="jekel" class="form-control" placeholder="Masukan Text" value="{{ $data->jekel }}">
+                        <label for="jekel" class="mt-1">Jenis Kelamin</label>
+                        <select name="jekel" id="jekel" class="form-control">
+                            <option value="Laki-Laki">Laki-Laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        </select>
                     </div>
 
                     <div class="form-group mt-1">
@@ -35,7 +38,7 @@
 
                     <div class="form-group mt-1">
                         <label for="nama"  class="mt-1">Alamat</label>
-                        <textarea name="alamat" class="form-control" placeholder="Masukan Text"> {{ $data->alamat }}"</textarea>
+                        <textarea name="alamat" class="form-control" placeholder="Masukan Text"> {{ $data->alamat }}</textarea>
                     </div>
 
                     <div class="form-group mt-1">
@@ -50,7 +53,13 @@
 
                     <div class="form-group mt-1">
                         <label for="nama" class="mt-1">Jabatan</label>
-                        <input type="text" name="jabatan" class="form-control" placeholder="Masukan Text" value="{{ $data->jabatan }}">
+                        <select name="jabatan" id="jabatan" class="form-control">
+                            <option value="Kepala">Kepala Pengurus Masjid</option>
+                            <option value="Wakil Kepala">Wakil Ketua Pengurus Masjid</option>
+                            <option value="Seketaris">Seketaris Pengurus Masjid</option>
+                            <option value="Bendahara">Bendahara Pengurus Masjid</option>
+                            <option value="Anggota">Anggota Pengurus Masjid</option>
+                        </select>
                     </div>
                     
                     <div class="form-group mt-3">

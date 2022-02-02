@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    /**
+/**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -43,6 +43,7 @@ class UserController extends Controller
         //
         $data = $request->except(['_token']);
         User::insert($data);
+        return redirect('/user');
     }
 
     /**
@@ -69,6 +70,10 @@ class UserController extends Controller
     public function edit($id)
     {
         //
+        $item = User::findOrFail($id);
+        return view('/user_edit', [
+            'item' => $item,
+        ]);
     }
 
     /**
@@ -84,7 +89,7 @@ class UserController extends Controller
         $item = User::findOrFail($id);
         $data = $request->except(['_token']);
         $item->update($data);
-        return redirect('../content/admin/user');
+        return redirect('/user');
     }
 
     /**
@@ -98,5 +103,7 @@ class UserController extends Controller
         //
         $item = User::findOrFail($id);
         $item->delete();
+        return redirect('/user');
+
     }
 }

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class CeramahController extends Controller
 {
-    /**
+/**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -43,6 +43,7 @@ class CeramahController extends Controller
         //
         $data = $request->except(['_token']);
         Ceramah::insert($data);
+        return redirect('/ceramah');
     }
 
     /**
@@ -55,7 +56,7 @@ class CeramahController extends Controller
     {
         //
         $data = Ceramah::findOrFail($id);
-        return view('../content/admin/kegiatan_edit')->with([
+        return view('../content/admin/ceramah_edit')->with([
             'data' => $data
         ]);
     }
@@ -69,7 +70,10 @@ class CeramahController extends Controller
     public function edit($id)
     {
         //
-        
+        $item = Ceramah::findOrFail($id);
+        return view('/ceramah_edit', [
+            'item' => $item,
+        ]);
     }
 
     /**
@@ -85,7 +89,7 @@ class CeramahController extends Controller
         $item = Ceramah::findOrFail($id);
         $data = $request->except(['_token']);
         $item->update($data);
-        return redirect('../content/admin/kegiatan');
+        return redirect('/ceramah');
     }
 
     /**
@@ -99,5 +103,7 @@ class CeramahController extends Controller
         //
         $item = Ceramah::findOrFail($id);
         $item->delete();
+        return redirect('/ceramah');
+
     }
 }

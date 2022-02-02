@@ -17,7 +17,7 @@ class CreateRemajaMasjidsTable extends Migration
             $table->bigIncrements('id');
             $table->string('nama', 100);
             $table->date('tgllahir');
-            $table->char('jekel', 1);
+            $table->string('jekel', 20);
             $table->string('asal', 100);
             $table->text('alamat');
             $table->string('notelp', 15);

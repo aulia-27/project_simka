@@ -10,7 +10,7 @@ class Kegiatan extends Model
 {
     use HasFactory;
     protected $table = 'kegiatans';
-    protected $fillabel = [
+    protected $fillable = [
         'nama_kegiatan',
         'tgl_kegiatan',
         'waktu',

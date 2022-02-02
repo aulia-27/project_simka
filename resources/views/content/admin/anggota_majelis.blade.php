@@ -44,9 +44,9 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                        @foreach ($data as $dataAnggotaMajelis)
+                        @foreach ($data as $index=>$dataAnggotaMajelis)
                             <tr>
-                                <td>{{ $dataAnggotaMajelis->id }}</td>
+                                <td>{{ $index+1}}</td>
                                 <td>{{ $dataAnggotaMajelis->nama }}</td>
                                 <td>{{ $dataAnggotaMajelis->tgllahir }}</td>
                                 <td>{{ $dataAnggotaMajelis->jekel }}</td>
@@ -57,7 +57,7 @@
                                 <td>{{ $dataAnggotaMajelis->jabatan }}</td>
                                 <td>
                                     <a href="{{ url('/anggota_majelis_edit/'.$dataAnggotaMajelis->id) }}" class="btn btn-warning">edit</a>
-                                    <a href="{{ url('/destroy/'.$dataAnggotaMajelis->id) }}" class="btn btn-danger">delete</a>
+                                    <a href="{{ url('/anggota_majelis_destroy/'.$dataAnggotaMajelis->id) }}" class="btn btn-danger">delete</a>
                                 </td>
                             </tr>
                         @endforeach

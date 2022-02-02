@@ -38,16 +38,16 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                        @foreach ($data as $dataKegiatan)
+                        @foreach ($data as $index=>$dataKegiatan)
                             <tr>
-                                <td>{{ $dataKegiatan->id }}</td>
+                                <td>{{ $index+1}}</td>
                                 <td>{{ $dataKegiatan->nama_kegiatan }}</td>
                                 <td>{{ $dataKegiatan->tgl_kegiatan }}</td>
                                 <td>{{ $dataKegiatan->waktu }}</td>
-                                <td>{{ $dataKegiatan->deskripsi }}</td>
+                                <td>{{ \Illuminate\Support\Str::Limit($dataKegiatan->deskripsi, 150) }}</td>
                                 <td>
                                     <a href="{{ url('/kegiatan_edit/'.$dataKegiatan->id) }}" class="btn btn-warning">edit</a>
-                                    <a href="{{ url('/destroy/'.$dataKegiatan->id) }}" class="btn btn-danger">delete</a>
+                                    <a href="{{ url('/kegiatan_destroy/'.$dataKegiatan->id) }}" class="btn btn-danger">delete</a>
                                 </td>
                             </tr>
                         @endforeach

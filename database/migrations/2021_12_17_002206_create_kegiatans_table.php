@@ -17,7 +17,7 @@ class CreateKegiatansTable extends Migration
             $table->bigIncrements('id');
             $table->string('nama_kegiatan', 50);
             $table->date('tgl_kegiatan');
-            $table->string('waktu', 20);
+            $table->string('waktu', 30);
             $table->text('deskripsi');
             $table->softDeletes();
             $table->timestamps();

@@ -11,7 +11,7 @@
         </ol>
         <div class="card mb-4">
             <div class="card-body">
-                <form action="{{ url('/remaja_masjid_store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ url('/user_store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group mt-1">
                         <label for="nama"  class="mt-1">Username</label>
@@ -30,7 +30,10 @@
 
                     <div class="form-group mt-1">
                         <label for="nama" class="mt-1">Status</label>
-                        <input type="text" name="status" class="form-control" placeholder="Masukan Text">
+                        <select name="status" id="status" class="form-control">
+                            <option value="Admin">Admin</option>
+                            <option value="Admin">Anggota</option>
+                        </select>
                     </div>
                     
                     <div class="form-group mt-3">

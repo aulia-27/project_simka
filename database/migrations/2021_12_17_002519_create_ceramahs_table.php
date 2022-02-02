@@ -17,7 +17,7 @@ class CreateCeramahsTable extends Migration
             $table->bigIncrements('id');
             $table->string('judul', 100);
             $table->date('tgl_ceramah');
-            $table->string('waktu', 20);
+            $table->string('waktu', 30);
             $table->string('ustad', 50);
             $table->text('deskripsi');
             $table->softDeletes();

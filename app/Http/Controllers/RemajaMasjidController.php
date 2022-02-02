@@ -43,6 +43,7 @@ class RemajaMasjidController extends Controller
         //
         $data = $request->except(['_token']);
         RemajaMasjid::insert($data);
+        return redirect('/remaja_masjid');
     }
 
     /**
@@ -69,6 +70,10 @@ class RemajaMasjidController extends Controller
     public function edit($id)
     {
         //
+        $item = RemajaMasjid::findOrFail($id);
+        return view('/remaja_masjid_edit', [
+            'item' => $item,
+        ]);
     }
 
     /**
@@ -84,7 +89,7 @@ class RemajaMasjidController extends Controller
         $item = RemajaMasjid::findOrFail($id);
         $data = $request->except(['_token']);
         $item->update($data);
-        return redirect('../content/admin/kegiatan');
+        return redirect('/remaja_masjid');
     }
 
     /**
@@ -98,5 +103,7 @@ class RemajaMasjidController extends Controller
         //
         $item = RemajaMasjid::findOrFail($id);
         $item->delete();
+        return redirect('/remaja_masjid');
+
     }
 }

@@ -46,6 +46,7 @@ class HomeController extends Controller
     {
         # code...
         $data = Ceramah::all();
+        $data = Ceramah::orderBy('created_at','DESC')->get();
         return view('content/home/ceramah')->with([
             'data' => $data
         ]);

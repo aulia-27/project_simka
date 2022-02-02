@@ -38,16 +38,16 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                        @foreach ($data as $dataUser)
+                        @foreach ($data as $index=>$dataUser)
                             <tr>
-                                <td>{{ $dataUser->id }}</td>
+                                <td>{{ $index+1}}</td>
                                 <td>{{ $dataUser->name }}</td>
                                 <td>{{ $dataUser->email }}</td>
                                 <td>{{ $dataUser->password }}</td>
                                 <td>{{ $dataUser->status }}</td>
                                 <td>
                                     <a href="{{ url('/user_edit/'.$dataUser->id) }}" class="btn btn-warning">edit</a>
-                                    <a href="{{ url('/destroy/'.$dataUser->id) }}" class="btn btn-danger">delete</a>
+                                    <a href="{{ url('/user_destroy/'.$dataUser->id) }}" class="btn btn-danger">delete</a>
                                 </td>
                             </tr>
                         @endforeach

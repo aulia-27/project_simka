@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class KegiatanController extends Controller
 {
-    /**
+/**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -43,6 +43,7 @@ class KegiatanController extends Controller
         //
         $data = $request->except(['_token']);
         Kegiatan::insert($data);
+        return redirect('/kegiatan');
     }
 
     /**
@@ -69,6 +70,10 @@ class KegiatanController extends Controller
     public function edit($id)
     {
         //
+        $item = Kegiatan::findOrFail($id);
+        return view('/kegiatan_edit', [
+            'item' => $item,
+        ]);
     }
 
     /**
@@ -84,7 +89,7 @@ class KegiatanController extends Controller
         $item = Kegiatan::findOrFail($id);
         $data = $request->except(['_token']);
         $item->update($data);
-        return redirect('../content/admin/kegiatan');
+        return redirect('/kegiatan');
     }
 
     /**
@@ -98,5 +103,7 @@ class KegiatanController extends Controller
         //
         $item = Kegiatan::findOrFail($id);
         $item->delete();
+        return redirect('/kegiatan');
+
     }
 }

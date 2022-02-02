@@ -11,7 +11,7 @@
         </ol>
         <div class="card mb-4">
             <div class="card-body">
-                <form action="{{ url('/update/' . $data->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ url('/ceramah_update/' . $data->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group mt-1">
                         <label for="nama"  class="mt-1">Judul</label>
@@ -20,7 +20,7 @@
 
                     <div class="form-group mt-1">
                         <label for="nama"  class="mt-1">Tanggal Ceramah</label>
-                        <input type="text" name="tgl_ceramah" class="form-control" value="{{ $data->tgl_ceramah }}">
+                        <input type="text" name="tgl_ceramah" class="form-control" placeholder="tahun(1900)-bulan(01)-hari(01)" value="{{ $data->tgl_ceramah }}">
                     </div>
 
                     <div class="form-group mt-1">
@@ -35,7 +35,7 @@
 
                     <div class="form-group mt-1">
                         <label for="nama"  class="mt-1">Deskripsi</label>
-                        <textarea name="deskripsi" class="form-control" placeholder="Masukan Text">{{ $data->deskripsi }}"</textarea>
+                        <textarea name="deskripsi" class="form-control"  style="height: 150px" placeholder="Masukan Text">{{ $data->deskripsi }}"</textarea>
                     </div>
                     
                     <div class="form-group mt-3">

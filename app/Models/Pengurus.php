@@ -11,7 +11,7 @@ class Pengurus extends Model
     use HasFactory;
 
     protected $table = 'penguruses';
-    protected $fillabel = [
+    protected $fillable = [
         'nama',
         'tgllahir',
         'jekel',

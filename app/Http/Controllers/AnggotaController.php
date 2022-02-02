@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class AnggotaController extends Controller
 {
-    /**
+/**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -43,7 +43,8 @@ class AnggotaController extends Controller
     {
         //
         $data = $request->except(['_token']);
-        Ceramah::insert($data);
+        AnggotaMajelis::insert($data);
+        return redirect('/anggota_majelis');
     }
 
     /**
@@ -70,6 +71,10 @@ class AnggotaController extends Controller
     public function edit($id)
     {
         //
+        $item = AnggotaMajelis::findOrFail($id);
+        return view('/anggota_majelis_edit', [
+            'item' => $item,
+        ]);
     }
 
     /**
@@ -82,10 +87,10 @@ class AnggotaController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $item = Ceramah::findOrFail($id);
+        $item = AnggotaMajelis::findOrFail($id);
         $data = $request->except(['_token']);
         $item->update($data);
-        return redirect('../content/admin/ceramah');
+        return redirect('/anggota_majelis');
     }
 
     /**
@@ -99,5 +104,7 @@ class AnggotaController extends Controller
         //
         $item = AnggotaMajelis::findOrFail($id);
         $item->delete();
+        return redirect('/anggota_majelis');
+
     }
 }

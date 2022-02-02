@@ -40,17 +40,17 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                        @foreach ($data as $dataCeramah)
+                        @foreach ($data as $index=>$dataCeramah)
                             <tr>
-                                <td>{{ $dataCeramah->id }}</td>
+                                <td>{{ $index+1}}</td>
                                 <td>{{ $dataCeramah->judul }}</td>
                                 <td>{{ $dataCeramah->tgl_ceramah }}</td>
                                 <td>{{ $dataCeramah->waktu }}</td>
                                 <td>{{ $dataCeramah->ustad }}</td>
-                                <td>{{ $dataCeramah->deskripsi }}</td>
+                                <td>{{ \Illuminate\Support\Str::limit($dataCeramah->deskripsi,150)}}</td>
                                 <td>
                                     <a href="{{ url('/ceramah_edit/'.$dataCeramah->id) }}" class="btn btn-warning">edit</a>
-                                    <a href="{{ url('/destroy/'.$dataCeramah->id) }}" class="btn btn-danger">delete</a>
+                                    <a href="{{ url('/ceramah_destroy/'.$dataCeramah->id) }}" class="btn btn-danger">delete</a>
                                 </td>
                             </tr>
                         @endforeach

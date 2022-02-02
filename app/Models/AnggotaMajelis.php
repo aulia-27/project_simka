@@ -10,7 +10,7 @@ class AnggotaMajelis extends Model
 {
     use HasFactory;
     protected $table = 'anggota_majelis';
-    protected $fillabel = [
+    protected $fillable = [
         'nama',
         'tgllahir',
         'jekel',

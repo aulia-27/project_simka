@@ -17,15 +17,18 @@
                         <label for="nama"  class="mt-1">Nama</label>
                         <input type="text" name="nama" class="form-control" placeholder="Masukan Text">
                     </div>
-
+                    
                     <div class="form-group mt-1">
                         <label for="nama"  class="mt-1">Tanggal Lahir</label>
-                        <input type="text" name="tgllahir" class="form-control">
+                        <input type="text" name="tgllahir" class="form-control" placeholder="tahun-bulan-hari">
                     </div>
 
                     <div class="form-group mt-1">
                         <label for="nama" class="mt-1">Jenis Kelamin</label>
-                        <input type="text" name="jekel" class="form-control" placeholder="Masukan Text">
+                        <select name="jekel" id="jekel" class="form-control">
+                            <option value="Laki-Laki">Laki-Laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        </select>
                     </div>
 
                     <div class="form-group mt-1">
@@ -50,7 +53,13 @@
 
                     <div class="form-group mt-1">
                         <label for="nama" class="mt-1">Jabatan</label>
-                        <input type="text" name="jabatan" class="form-control" placeholder="Masukan Text">
+                        <select name="jabatan" id="jabatan" class="form-control">
+                            <option value="Ketua">Ketua Remaja Masjid</option>
+                            <option value="Wakil Ketua">Wakil Ketua Remaja Masjid</option>
+                            <option value="Seketaris">Seketaris Remaja Masjid</option>
+                            <option value="Bendahara">Bendahara Remaja Masjid</option>
+                            <option value="Anggota">Anggota Remaja Masjid</option>
+                        </select>
                     </div>
                     
                     <div class="form-group mt-3">

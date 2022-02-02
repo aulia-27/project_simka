@@ -10,7 +10,7 @@ class Ceramah extends Model
 {
     use HasFactory;
     protected $table = 'ceramahs';
-    protected $fillabel = [
+    protected $fillable = [
         'judul',
         'tgl_ceramah',
         'waktu',

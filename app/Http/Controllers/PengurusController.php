@@ -43,6 +43,7 @@ class PengurusController extends Controller
         //
         $data = $request->except(['_token']);
         Pengurus::insert($data);
+        return redirect('/pengurus');
     }
 
     /**
@@ -69,6 +70,10 @@ class PengurusController extends Controller
     public function edit($id)
     {
         //
+        $item = Pengurus::findOrFail($id);
+        return view('/pengurus_edit', [
+            'item' => $item,
+        ]);
     }
 
     /**
@@ -84,7 +89,7 @@ class PengurusController extends Controller
         $item = Pengurus::findOrFail($id);
         $data = $request->except(['_token']);
         $item->update($data);
-        return redirect('../content/admin/pengrus');
+        return redirect('/pengurus');
     }
 
     /**
@@ -98,5 +103,7 @@ class PengurusController extends Controller
         //
         $item = Pengurus::findOrFail($id);
         $item->delete();
+        return redirect('/pengurus');
+
     }
 }

@@ -10,7 +10,7 @@ class RemajaMasjid extends Model
 {
     use HasFactory;
     protected $table = 'remaja_masjids';
-    protected $fillabel = [
+    protected $fillable = [
         'nama',
         'tgllahir',
         'jekel',

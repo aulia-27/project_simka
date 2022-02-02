@@ -20,12 +20,15 @@
 
                     <div class="form-group mt-1">
                         <label for="nama"  class="mt-1">Tanggal Lahir</label>
-                        <input type="text" name="tgllahir" class="form-control">
+                        <input type="text" name="tgllahir" class="form-control" placeholder="tahun(1900)-bulan(01)-hari(01)"> 
                     </div>
 
                     <div class="form-group mt-1">
                         <label for="nama" class="mt-1">Jenis Kelamin</label>
-                        <input type="text" name="jekel" class="form-control" placeholder="Masukan Text">
+                        <select name="jekel" id="jekel" class="form-control">
+                            <option value="Laki-Laki">Laki-Laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        </select>
                     </div>
 
                     <div class="form-group mt-1">
@@ -55,7 +58,7 @@
                     </div>
 
                     <div class="form-group mt-4">
-                        <a href="{{ url('/pengurus') }}"><< kembali ke halaman Anggota Majelis</a>
+                        <a href="{{ url('/anggota_majelis') }}"><< kembali ke halaman Anggota Majelis</a>
                     </div>
 
                 </form>
