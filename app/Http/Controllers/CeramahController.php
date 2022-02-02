@@ -98,6 +98,6 @@ class CeramahController extends Controller
     {
         //
         $item = Ceramah::findOrFail($id);
-        // $data->delete();
+        $item->delete();
     }
 }

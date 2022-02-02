@@ -98,6 +98,6 @@ class AnggotaController extends Controller
     {
         //
         $item = AnggotaMajelis::findOrFail($id);
-        // $data->delete();
+        $item->delete();
     }
 }

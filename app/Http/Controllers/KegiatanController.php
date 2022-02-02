@@ -97,6 +97,6 @@ class KegiatanController extends Controller
     {
         //
         $item = Kegiatan::findOrFail($id);
-        // $data->delete();
+        $item->delete();
     }
 }

@@ -97,6 +97,6 @@ class PengurusController extends Controller
     {
         //
         $item = Pengurus::findOrFail($id);
-        // $data->delete();
+        $item->delete();
     }
 }

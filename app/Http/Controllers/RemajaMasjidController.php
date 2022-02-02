@@ -97,6 +97,6 @@ class RemajaMasjidController extends Controller
     {
         //
         $item = RemajaMasjid::findOrFail($id);
-        // $data->delete();
+        $item->delete();
     }
 }
