@@ -31,6 +31,11 @@
                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                 Kegiatan
             </a>
+
+            <a class="nav-link" href="/user">
+                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                Akun
+            </a>
         </div>
     </div>
     <div class="sb-sidenav-footer">

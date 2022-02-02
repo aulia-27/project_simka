@@ -27,6 +27,9 @@
                 @yield('kegiatan')
                 @yield('kegiatan_input')
                 @yield('kegiatan_edit')
+                @yield('user')
+                @yield('user_input')
+                @yield('user_edit')
 
                 @include('../layouts/admin/footer')
             </div>

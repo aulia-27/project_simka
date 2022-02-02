@@ -10,6 +10,7 @@ use App\Http\Controllers\AnggotaMajelisController;
 use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\CeramahController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,5 +75,13 @@ Route::post('/ceramah_store', [CeramahController::class, 'store']);
 Route::get('/ceramah_edit/{id}', [CeramahController::class, 'show']);
 Route::post('/update/{id}', [CeramahController::class, 'update']);
 Route::get('/destroy/{id}', [CeramahController::class, 'destroy']);
+
+//user
+Route::get('/user', [UserController::class, 'index']);
+Route::get('/user_input', [UserController::class, 'create']);
+Route::post('/user_store', [UserController::class, 'store']);
+Route::get('/user_edit/{id}', [UserController::class, 'show']);
+Route::post('/update/{id}', [UserController::class, 'update']);
+Route::get('/destroy/{id}', [UserController::class, 'destroy']);
 
 
